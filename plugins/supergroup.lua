@@ -565,8 +565,7 @@ end
 		end
 	end
   local settings = data[tostring(target)]['settings']
- local text = "🔧 تنظیمات سوپر گروه:\n⚙ قفل لینک : "..settings.lock_link.."\n⚙ قفل فلود : "..settings.flood.."\n⚙ حساسیت فلود : "..NUM_MSG_MAX.."\n⚙ قفل اسپم : "..settings.lock_spam.."\n⚙ قفل عربی : "..settings.lock_arabic.."\n⚙ قفل ممبر : "..settings.lock_member.."\n⚙ قفل راست به چپ : "..settings.lock_rtl.."\n⚙ قفل اعلان های گروه : "..settings.lock_tgservice.."\n⚙ قفل استیکر: "..settings.lock_sticker.."\n⚙ همگانی: "..settings.public.."\n⚙ تنظیمات سخت گیرانه : "..settings.strict  return text
-end
+ local text = "☢ تنظیمات سوپر گروه:\n⭕️ قفل لینک : "..settings.lock_link.."\n⭕️ قفل فلود: "..settings.flood.."\n⭕️ حساسیت فلود : "..NUM_MSG_MAX.."\n⭕️ قفل اسپم: "..settings.lock_spam.."\n⭕️ قفل عربی: "..settings.lock_arabic.."\n⭕️ قفل ممبر: "..settings.lock_member.."\n⭕️ قفل RTL: "..settings.lock_rtl.."\n⭕️ قفل اعلانات گروه : "..settings.lock_tgservice.."\n⭕️ قفل استیکر: "..settings.lock_sticker.."\n⭕️ همگانی: "..settings.public.."\n⭕️ تنظیمات سخت گیرانه: "..settings.strictend.."\n ⚠️ Chanel Id : @JokerTeam "
 
 local function promote_admin(receiver, member_username, user_id)
   local data = load_data(_config.moderation.data)
@@ -1951,7 +1950,7 @@ local function run(msg, matches)
 			return muted_user_list(chat_id)
 		end
 
-		if matches[1] == 'settings' and is_momod(msg) then
+		if matches[1] == 'تنظیمات' and is_momod(msg) then
 			local target = msg.to.id
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested SuperGroup settings ")
 			return show_supergroup_settingsmod(msg, target)
@@ -2074,7 +2073,7 @@ return {
 	"^[#!/]([Mm]uteuser)$",
 	"^[#!/]([Mm]uteuser) (.*)$",
 	"^[#!/]([Pp]ublic) (.*)$",
-	"^[#!/]([Ss]ettings)$",
+	"^(تنظیمات)$",
 	"^[#!/]([Rr]ules)$",
 	"^[#!/]([Ss]etflood) (%d+)$",
 	"^[#!/]([Cc]lean) (.*)$",
