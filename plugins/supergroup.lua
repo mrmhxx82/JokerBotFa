@@ -1309,7 +1309,7 @@ local function run(msg, matches)
 			end
 		end
 
-		if matches[1] == 'link' then
+		if matches[1] == 'لینک' then
 			if not is_momod(msg) then
 				return
 			end
@@ -1318,7 +1318,7 @@ local function run(msg, matches)
 				return "Create a link using /newlink first!\n\nOr if I am not creator use /setlink to set your link"
 			end
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group link ["..group_link.."]")
-			return "> لینک گروه ["..msg.to.print_name.."]\n〰〰〰〰〰〰〰〰〰〰〰〰"..group_link
+			return "> لینک گروه ["..msg.to.print_name.."]\n----------------------"..group_link
 		end
 
 		if matches[1] == "invite" and is_sudo(msg) then
@@ -2049,7 +2049,7 @@ return {
 	"^[#!/]([Kk]ick) (.*)$",
 	"^[#!/]([Nn]ewlink)$",
 	"^[#!/]([Ss]etlink)$",
-	"^[#!/]([Ll]ink)$",
+	"^(لینک)$",
 	"^[#!/]([Rr]es) (.*)$",
 	"^[#!/]([Ss]etadmin) (.*)$",
 	"^[#!/]([Ss]etadmin)",
